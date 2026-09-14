@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_splashScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SplashScreen"
+    android:background="@drawable/background_splash_screen">
+    <!--En este Fragment creamos un SplashScreen que sera los primero que vea el usuario nada mas
+    abrir la app previo a escoger la opcion de o iniciar sesion o de registrarse-->
+
+    <!--Juntamos todo en un constraintlayout para luego tenerlo todo ordenador y agarrado-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Ponemos el logo de la app-->
+        <ImageView
+            android:id="@+id/iV_splash_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="350dp"
+            android:src="@drawable/splash_screen"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="100dp"
+            />
+
+        <!--Añadimos las dos partes del texto por separado para poder modificar los colores-->
+        <TextView
+            android:id="@+id/tV_firstWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/first_word"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iV_splash_screen"
+            android:textSize="40dp"
+            android:translationY="-90dp"
+            android:translationX="-26dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/caacupeone_regular"
+            />
+        <TextView
+            android:id="@+id/tV_scondWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/second_word"
+            app:layout_constraintStart_toEndOf="@id/tV_firstWord"
+            app:layout_constraintTop_toBottomOf="@id/iV_splash_screen"
+            android:translationY="-90dp"
+            android:translationX="-26dp"
+            android:textSize="40dp"
+            android:fontFamily="@font/caacupeone_regular"
+            android:textColor="@color/green"/>
+
+        <!--Creamos una progressbar para simular que se carga la aplicacion la realidad es que solo
+        es para que se vea bonito-->
+        <ProgressBar
+            android:id="@+id/pB_carga"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/iV_splash_screen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="true"
+            android:indeterminateDuration="03000"
+            android:indeterminateDrawable="@drawable/pb_drawable"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

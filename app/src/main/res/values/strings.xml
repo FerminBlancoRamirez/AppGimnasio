@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">EvoGym</string>
+    <string name="first_word">EVO</string>
+    <string name="second_word">GYM</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="selection">Inicia sesion o registrate</string>
+    <string name="login">Inicia sesion</string>
+    <string name="singIn">Registrate</string>
+    <string name="Registrarse">Registrarse</string>
+    <string name="email">Email:</string>
+    <string name="pasword">Contraseña:</string>
+    <string name="password_repetition">Repite la contraseña:</string>
+    <string name="ejemplo_correo">usuario@gmail.com</string>
+    <string name="restricciones_contraseña">*************</string>
+    <string name="forgot_password">¿Has olvidado la contraseña?</string>
+    <string name="Nombre">Nombre completo:</string>
+    <string name="Nombre_ejemplo">Lucas Perez:</string>
+    <string name="Username">Nombre de usuario:</string>
+    <string name="Edad">Edad:</string>
+    <string name="Edad_ejemplo">18</string>
+    <string name="Peso">Peso en Kg:</string>
+    <string name="Peso_ejemplo">80</string>
+    <string name="Bienvenida">¡Bienvenido Usuario!</string>
+
+</resources>

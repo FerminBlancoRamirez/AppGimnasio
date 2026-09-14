@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Registro"
+    android:background="@color/black">
+    <!--En este fragment creamos la pantalla de inicio de sesion o de registro de la app
+    de la cual despues con dos botones colgara la pantalla de iniciar sesion o de registrarse-->
+
+        <!--Añadimos el logo de la app en una parte superior y en grande-->
+        <ImageView
+            android:id="@+id/iV_iconSingUp"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/splash_screen"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <!--Creamos un LinnerLayout para ordenar las palabras del nombre de una manera vertical-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginBottom="110dp">
+            <!-- El orden lo pondriamos con el orientation -->
+
+                <!-- Añadimos los dos textos -->
+                <TextView
+                    android:id="@+id/tVInicioFirstWord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/first_word"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="60dp"
+                    android:fontFamily="@font/caacupeone_regular"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:id="@+id/tVInicioSecondWord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/second_word"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="60dp"
+                    android:fontFamily="@font/caacupeone_regular"
+                    android:textColor="@color/green"/>
+        </LinearLayout>
+
+        <!-- Creamos otro LinnerLayout con el cual ordenaremos el texto y los botones -->
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:layout_gravity="center"
+           android:layout_marginBottom="10dp"
+           android:layout_marginTop="100dp">
+
+                <!-- Añadimos ambos textos siempre sin hardcodearlos -->
+               <TextView
+                   android:id="@+id/tVInicioBienvenido"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/welcome"
+                   android:layout_gravity="center"
+                   android:textSize="25dp"
+                   android:fontFamily="@font/poppins_semibold"
+                   android:textColor="@color/white"
+                   android:gravity="center"
+                   android:paddingBottom="5dp"/>
+
+               <TextView
+                   android:id="@+id/tVOpciones"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/selection"
+                   android:fontFamily="@font/poppins_medium"
+                   android:textSize="20dp"
+                   android:textColor="@color/white_off"
+                   android:paddingBottom="15dp"/>
+
+           <!-- Creamos un boton con un materia button para darle un estilo mas personalizado -->
+           <!-- Añadimos un icono a la izquierda de cada boton -->
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/btnInicioSesion"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:paddingVertical="14dp"
+               android:text="@string/login"
+               android:backgroundTint="@color/green"
+               android:textColor="@color/black"
+               android:textStyle="bold"
+               android:fontFamily="@font/poppins_regular"
+               app:icon="@drawable/login"
+               app:iconGravity="textStart"
+               app:iconTint="@color/black"
+               app:cornerRadius="24dp"
+               app:iconPadding="14dp"
+               app:iconSize="30dp"
+               />
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/btnRegistro"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:paddingVertical="14dp"
+               android:text="@string/singIn"
+               android:backgroundTint="@color/grey"
+               android:textColor="@color/white"
+               android:textStyle="bold"
+               android:fontFamily="@font/poppins_regular"
+               app:icon="@drawable/singin"
+               app:iconGravity="textStart"
+               app:iconTint="@color/white"
+               app:cornerRadius="24dp"
+               app:iconPadding="14dp"
+               app:iconSize="30dp"
+               android:layout_marginTop="15dp"
+               />
+       </LinearLayout>
+
+
+
+</FrameLayout>
