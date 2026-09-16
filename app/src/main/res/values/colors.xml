@@ -7,4 +7,8 @@
     <color name="grey">#999999</color>
     <color name="soft_green">#A8D5BA</color>
     <color name="transparente">#00000000</color>
+    <color name="gris_claro">#454545</color>
+    <color name="navigation_view">#2C2C2C</color>
+    <color name="verdeDestacado">#121212</color>
+    <color name="colorBorde">#C0E020</color>
 </resources>

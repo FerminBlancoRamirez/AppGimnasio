@@ -21,5 +21,7 @@
     <string name="Peso">Peso en Kg:</string>
     <string name="Peso_ejemplo">80</string>
     <string name="Bienvenida">¡Bienvenido Usuario!</string>
+    <string name="EntrenamientoSemanal">Mis entrenamientos semanales</string>
+    <string name="RegistroDeBloque">Registra tu bloque de entrenamiento</string>
 
 </resources>

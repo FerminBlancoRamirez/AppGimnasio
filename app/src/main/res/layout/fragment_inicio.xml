@@ -1,56 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".inicio"
-    android:background="@color/black">
+    android:background="@color/black"
+    tools:context=".inicio">
 
+    <!-- Con este constraint agrupamos todos los elementos anclandolos entre ellos -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <LinearLayout
-        android:id="@+id/lLBienvenida"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <TextView
-            android:id="@+id/tV_Bienvenida"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Bienvenida"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:fontFamily="@font/poppins_semibold"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"/>
 
+        <!-- Con este linear ponemos un elemento al lado de otro gracias a orientation -->
+        <LinearLayout
+            android:id="@+id/lLBienvenida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Texto de saludo al usuario -->
+            <TextView
+                android:id="@+id/tV_Bienvenida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/Bienvenida"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <!-- Boton que redigira a pestaña de notificaciones -->
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/transparente"
+                app:icon="@drawable/notificacion"
+                app:iconSize="40dp" />
+        </LinearLayout>
+
+        <!-- Boton que nos llevara a una pestaña con todos los entrenamientos de la semana -->
         <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
+            android:id="@+id/mBEntrenamientos"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            app:icon="@drawable/notificacion"
+            app:layout_constraintTop_toBottomOf="@id/lLBienvenida"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/gris_claro"
+            app:icon="@drawable/calendario"
             app:iconSize="40dp"
-            android:backgroundTint="@color/transparente"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="8dp"
+            android:text="@string/EntrenamientoSemanal"
+            android:textSize="15sp"
+            android:fontFamily="@font/poppins_semibold"
+            app:secondaryIcon="@drawable/flecha"
+            android:padding="20dp"
+            app:iconPadding="10dp"
+            app:cornerRadius="12dp"
+            android:layout_marginTop="40dp"/>
+
+        <!-- Boton que nos llevara a una pestaña para registrar el bloque de entrenamiento-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mBRegistroEntrenamientos"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/mBEntrenamientos"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/gris_claro"
+            app:icon="@drawable/apuntar"
+            app:iconSize="40dp"
+            android:text="@string/RegistroDeBloque"
+            android:textSize="15sp"
+            android:fontFamily="@font/poppins_semibold"
+            app:secondaryIcon="@drawable/flecha"
+            android:padding="20dp"
+            app:iconPadding="10dp"
+            app:cornerRadius="12dp"
+            android:layout_marginTop="40dp"/>
+
+        <!-- Boton que te llevara a tu entrenamiento diario-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mBEntrenamientoDiario"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/mBRegistroEntrenamientos"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/gris_claro"
+            app:icon="@drawable/mancuernas"
+            app:iconSize="40dp"
+            android:text="@string/EntrenamientoSemanal"
+            android:textSize="15sp"
+            android:fontFamily="@font/poppins_semibold"
+            app:secondaryIcon="@drawable/flecha"
+            android:padding="20dp"
+            app:iconPadding="10dp"
+            app:cornerRadius="12dp"
+            android:layout_marginTop="40dp"
             />
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/lLBienvenida"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        <!-- Ahora añadimos un BottomNavigationVIew que usaremos para movernos por las pestañas -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/navigation_view"/>
 
 
-
-    </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
