@@ -24,4 +24,13 @@
     <string name="EntrenamientoSemanal">Mis entrenamientos semanales</string>
     <string name="RegistroDeBloque">Registra tu bloque de entrenamiento</string>
 
+
+    <!--Texto del navigationView-->
+    <string name="InicioNV">Inicio</string>
+    <string name="CalendarioNV">Calendario</string>
+    <string name="ProgresoNV">Progreso</string>
+    <string name="PerfilNV">Perfil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

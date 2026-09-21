@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/inicio"
+        android:icon="@drawable/edificio_de_gimnasio"
+        android:title="@string/InicioNV"/>
+
+    <item
+        android:id="@+id/calendario"
+        android:icon="@drawable/calendario_gimnasio"
+        android:title="@string/CalendarioNV"/>
+
+    <item
+        android:id="@+id/Progreso"
+        android:icon="@drawable/progreso"
+        android:title="@string/ProgresoNV"/>
+
+    <item
+        android:id="@+id/Perfil"
+        android:icon="@drawable/perfil"
+        android:title="@string/PerfilNV"/>
+
+</menu>
