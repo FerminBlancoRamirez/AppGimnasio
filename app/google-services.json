@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "319686659236",
+    "project_id": "evogym-ff378",
+    "storage_bucket": "evogym-ff378.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319686659236:android:b32438f64db0b696ef6a31",
+        "android_client_info": {
+          "package_name": "com.example.appgimnasio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-VEBMKtLl_sGQ5z70Dla0mIIEiT1Pvs8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

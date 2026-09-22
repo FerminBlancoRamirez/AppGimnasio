@@ -3,23 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black"
     tools:context=".Calendario">
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rVCalendario"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/gris_claro"
-        >
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="1"
+        tools:listitem="@layout/days_item"/>
 
-        <CalendarView
-            android:id="@+id/cVCalendario"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:dateTextAppearance="@style/DayCalendarTextAppearance"
-            android:theme="@style/CalendarTheme"
-            android:weekDayTextAppearance="@style/WeekCalendarTextAppearance" />
-    </LinearLayout>
 
 
 </FrameLayout>
