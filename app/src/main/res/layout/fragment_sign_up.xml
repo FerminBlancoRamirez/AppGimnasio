@@ -3,193 +3,215 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Sign_up"
-    android:background="@color/black">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    tools:context=".Sign_up">
     <!-- Con este fragment crearemos la pantalla de registro de un nuevo usuario -->
-
-    <!-- Añadimos logo de app -->
-    <ImageView
-        android:id="@+id/iV_iconSingUp"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:src="@drawable/splash_screen"
-        android:layout_gravity="center_horizontal"
-        />
-
-    <!--Creamos un LinnerLayout para ordenar las palabras del nombre de una manera vertical-->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:layout_marginBottom="200dp">
-
-        <!-- Añadimos los dos textos -->
-        <TextView
-            android:id="@+id/tVprimeraPalabra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/first_word"
-            android:layout_gravity="center_horizontal"
-            android:textSize="40sp"
-            android:fontFamily="@font/caacupeone_regular"
-            android:textColor="@color/white"/>
-        <TextView
-            android:id="@+id/tVsegundaPalabra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/second_word"
-            android:layout_gravity="center_horizontal"
-            android:textSize="40sp"
-            android:fontFamily="@font/caacupeone_regular"
-            android:textColor="@color/green"/>
-    </LinearLayout>
-
-    <!-- Se crea un materialCard para agrupar todos los elementos importantes del
-   del registro para darle un estilo visual mejorado-->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mCRegistro"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/soft_green"
-        android:layout_gravity="center"
-        android:padding="15dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="90dp">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <!-- Creamos un LinnerLayout para ordenar todos los elementos de registro-->
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:padding="10dp">
+            android:layout_height="match_parent">
+            <!-- Añadimos logo de app -->
+            <ImageView
+                android:contentDescription="@string/logoApp"
+                android:id="@+id/iV_iconSingUp"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/splash_screen"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-            <!--Informacion-->
-            <TextView
-                android:id="@+id/tVRegistro"
+            <!--Creamos un LinnerLayout para ordenar las palabras del nombre de una manera vertical-->
+            <LinearLayout
+                android:id="@+id/lLNombreApp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Registrarse"
-                android:fontFamily="@font/poppins_medium"
-                android:textSize="25sp"
-                android:textColor="@color/black"
-                android:paddingBottom="15dp"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"
+                android:layout_marginBottom="200dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/iV_iconSingUp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-            <!-- Recogemos el nombre completo del usuario -->
-            <TextView
-                android:id="@+id/tVNombreCompleto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="@string/Nombre"
-                android:textSize="15sp"
-                android:fontFamily="@font/poppins_semibold"/>
+                <!-- Añadimos los dos textos -->
+                <TextView
+                    android:id="@+id/tVprimeraPalabra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/caacupeone_regular"
+                    android:text="@string/first_word"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
 
-            <EditText
-                android:id="@+id/eTNombreCompleto"
+                <TextView
+                    android:id="@+id/tVsegundaPalabra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/caacupeone_regular"
+                    android:text="@string/second_word"
+                    android:textColor="@color/green"
+                    android:textSize="40sp" />
+            </LinearLayout>
+
+            <!-- Se crea un materialCard para agrupar todos los elementos importantes del
+           del registro para darle un estilo visual mejorado-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mCRegistro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:hint="@string/Nombre_ejemplo"
-                android:inputType="text"
-                android:textSize="12sp"
-                android:autofillHints="name"/>
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="90dp"
+                android:layout_marginRight="20dp"
+                android:backgroundTint="@color/soft_green"
+                android:padding="15dp"
+                app:layout_constraintTop_toTopOf="@id/lLNombreApp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-            <!-- Recogemos la edad del usuario -->
-            <TextView
-                android:id="@+id/tVEdad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="@string/Edad"
-                android:textSize="15sp"
-                android:fontFamily="@font/poppins_semibold"/>
+                <!-- Creamos un LinnerLayout para ordenar todos los elementos de registro-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-            <!-- Para la edad crearemos un metodo para que el usuario introduzca dia mes y año-->
-            <EditText
-                android:id="@+id/eTEdad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:hint="@string/Edad_ejemplo"
-                android:focusable="false"
-                android:clickable="true"
-                android:textSize="12sp" />
+                    <!--Informacion-->
+                    <TextView
+                        android:id="@+id/tVRegistro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppins_medium"
+                        android:paddingBottom="15dp"
+                        android:text="@string/Registrarse"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
 
-            <!-- Recogemos email del usuario nuevo -->
-            <TextView
-                android:id="@+id/tVEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="@string/email"
-                android:textSize="15sp"
-                android:fontFamily="@font/poppins_semibold"/>
+                    <!-- Recogemos el nombre completo del usuario -->
+                    <TextView
+                        android:id="@+id/tVNombreCompleto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/Nombre"
+                        android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/eTEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:hint="@string/ejemplo_correo"
-                android:inputType="textEmailAddress"
-                android:textSize="12sp"/>
+                    <EditText
+                        android:id="@+id/eTNombreCompleto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:autofillHints="name"
+                        android:hint="@string/Nombre_ejemplo"
+                        android:inputType="text"
+                        android:textSize="12sp" />
 
-            <!-- Guardamos contraseña -->
-            <TextView
-                android:id="@+id/tVContraseñaNuevoUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="@string/pasword"
-                android:textSize="15sp"
-                android:fontFamily="@font/poppins_semibold"
-                />
+                    <!-- Recogemos la edad del usuario -->
+                    <TextView
+                        android:id="@+id/tVEdad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/Edad"
+                        android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/eTContraseñaNuevoUsuario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:hint="@string/restricciones_contraseña"
-                android:inputType="textPassword"
-                android:textSize="12sp"/>
+                    <!-- Para la edad crearemos un metodo para que el usuario introduzca dia mes y año-->
+                    <EditText
+                        android:id="@+id/eTEdad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:hint="@string/Edad_ejemplo"
+                        android:textSize="12sp"
+                        android:inputType="date"
+                        android:autofillHints="creditCardExpirationDate"/>
 
-            <!-- Forzamos que repita contraseña para comprobarlas y que el usuario este seguro de que contraseña puso-->
-            <TextView
-                android:id="@+id/tVRepeticionContraseña"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="@string/password_repetition"
-                android:textSize="15sp"
-                android:fontFamily="@font/poppins_semibold"
-                />
+                    <!-- Recogemos email del usuario nuevo -->
+                    <TextView
+                        android:id="@+id/tVEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/email"
+                        android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/eTRepeticionContraseña"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:hint="@string/restricciones_contraseña"
-                android:inputType="textPassword"
-                android:textSize="12sp"/>
+                    <EditText
+                        android:id="@+id/eTEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="@string/ejemplo_correo"
+                        android:inputType="textEmailAddress"
+                        android:textSize="12sp"
+                        android:autofillHints="emailAddress"/>
 
-            <!--Boton para finalizar registro-->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/mBRegistro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/green"
-                android:text="@string/singIn"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"/>
-        </LinearLayout>
+                    <!-- Guardamos contraseña -->
+                    <TextView
+                        android:id="@+id/tVContraseñaNuevoUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/pasword"
+                        android:textSize="15sp" />
 
-    </com.google.android.material.card.MaterialCardView>
+                    <EditText
+                        android:id="@+id/eTContraseñaNuevoUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="@string/restricciones_contraseña"
+                        android:inputType="textPassword"
+                        android:textSize="12sp"
+                        android:autofillHints="password"/>
 
+                    <!-- Forzamos que repita contraseña para comprobarlas y que el usuario este seguro de que contraseña puso-->
+                    <TextView
+                        android:id="@+id/tVRepeticionContraseña"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/password_repetition"
+                        android:textSize="15sp" />
 
+                    <EditText
+                        android:id="@+id/eTRepeticionContraseña"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="@string/restricciones_contraseña"
+                        android:inputType="textPassword"
+                        android:textSize="12sp"
+                        android:autofillHints="password"/>
+
+                    <!--Boton para finalizar registro-->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/mBRegistro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/green"
+                        android:text="@string/singIn" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </FrameLayout>

@@ -7,105 +7,110 @@
     android:background="@color/black"
     tools:context=".inicio">
 
-    <!-- Con este constraint agrupamos todos los elementos anclandolos entre ellos -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <!-- Con este linear ponemos un elemento al lado de otro gracias a orientation -->
-        <LinearLayout
-            android:id="@+id/lLBienvenida"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <!-- Con este constraint agrupamos todos los elementos anclandolos entre ellos -->
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent">
 
-            <!-- Texto de saludo al usuario -->
-            <TextView
-                android:id="@+id/tV_Bienvenida"
-                android:layout_width="wrap_content"
+            <!-- Con este linear ponemos un elemento al lado de otro gracias a orientation -->
+            <LinearLayout
+                android:id="@+id/lLBienvenida"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="@string/Bienvenida"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <!-- Boton que redigira a pestaña de notificaciones -->
+                <!-- Texto de saludo al usuario -->
+                <TextView
+                    android:id="@+id/tV_Bienvenida"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/Bienvenida"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <!-- Boton que redigira a pestaña de notificaciones -->
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/transparente"
+                    app:icon="@drawable/notificacion"
+                    app:iconSize="40dp" />
+            </LinearLayout>
+
+            <!-- Boton que nos llevara a una pestaña con todos los entrenamientos del dia-->
             <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
+                android:id="@+id/mBEntrenamientos"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
-                android:layout_marginTop="8dp"
-                android:backgroundTint="@color/transparente"
-                app:icon="@drawable/notificacion"
-                app:iconSize="40dp" />
-        </LinearLayout>
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/gris_claro"
+                android:fontFamily="@font/poppins_semibold"
+                android:padding="20dp"
+                android:text="@string/EntrenamientoDiario"
+                android:textSize="15sp"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/mancuernas"
+                app:iconPadding="10dp"
+                app:iconSize="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lLBienvenida"
+                app:secondaryIcon="@drawable/flecha" />
 
-        <!-- Boton que nos llevara a una pestaña con todos los entrenamientos de la semana -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/mBEntrenamientos"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/lLBienvenida"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:backgroundTint="@color/gris_claro"
-            app:icon="@drawable/calendario"
-            app:iconSize="40dp"
-            android:text="@string/EntrenamientoSemanal"
-            android:textSize="15sp"
-            android:fontFamily="@font/poppins_semibold"
-            app:secondaryIcon="@drawable/flecha"
-            android:padding="20dp"
-            app:iconPadding="10dp"
-            app:cornerRadius="12dp"
-            android:layout_marginTop="40dp"/>
+            <!-- Boton que nos llevara a una pestaña para registrar el bloque de entrenamiento-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mBRegistroEntrenamientos"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/gris_claro"
+                android:fontFamily="@font/poppins_semibold"
+                android:padding="20dp"
+                android:text="@string/RegistroDeBloque"
+                android:textSize="15sp"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/apuntar"
+                app:iconPadding="10dp"
+                app:iconSize="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mBEntrenamientos"
+                app:secondaryIcon="@drawable/flecha" />
 
-        <!-- Boton que nos llevara a una pestaña para registrar el bloque de entrenamiento-->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/mBRegistroEntrenamientos"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/mBEntrenamientos"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:backgroundTint="@color/gris_claro"
-            app:icon="@drawable/apuntar"
-            app:iconSize="40dp"
-            android:text="@string/RegistroDeBloque"
-            android:textSize="15sp"
-            android:fontFamily="@font/poppins_semibold"
-            app:secondaryIcon="@drawable/flecha"
-            android:padding="20dp"
-            app:iconPadding="10dp"
-            app:cornerRadius="12dp"
-            android:layout_marginTop="40dp"/>
-
-        <!-- Boton que te llevara a tu entrenamiento diario-->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/mBEntrenamientoDiario"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/mBRegistroEntrenamientos"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:backgroundTint="@color/gris_claro"
-            app:icon="@drawable/mancuernas"
-            app:iconSize="40dp"
-            android:text="@string/EntrenamientoSemanal"
-            android:textSize="15sp"
-            android:fontFamily="@font/poppins_semibold"
-            app:secondaryIcon="@drawable/flecha"
-            android:padding="20dp"
-            app:iconPadding="10dp"
-            app:cornerRadius="12dp"
-            android:layout_marginTop="40dp"
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- Boton que te llevara a tu entrenamiento diario-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mBEntrenamientoDiario"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/gris_claro"
+                android:fontFamily="@font/poppins_semibold"
+                android:padding="20dp"
+                android:text="@string/EntrenamientoSemanal"
+                android:textSize="15sp"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/calendario"
+                app:iconPadding="10dp"
+                app:iconSize="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mBRegistroEntrenamientos"
+                app:secondaryIcon="@drawable/flecha" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
 
 </FrameLayout>
