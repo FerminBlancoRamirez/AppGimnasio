@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class Sign_up extends Fragment {
+public class   Sign_up extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
