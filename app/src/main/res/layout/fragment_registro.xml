@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Registro"
-    android:background="@color/black">
+    android:background="@color/black"
+    android:id="@+id/fragment_Registro">
     <!--En este fragment creamos la pantalla de inicio de sesion o de registro de la app
     de la cual despues con dos botones colgara la pantalla de iniciar sesion o de registrarse-->
 

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_splashScreen">
+
+    <!-- Fragments sin Navigation Button -->
+    <fragment
+        android:id="@+id/splasScreen"
+        android:name="com.example.appgimnasio.SplashScreen"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_splash_to_registro"
+            app:destination="@id/fragment_Registro"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/fragment_splashScreen"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@id/fragment_Registro"
+        android:name="com.example.appgimnasio.Registro"
+        tools:layout="@layout/fragment_registro">
+        <action
+            android:id="@+id/action_registro_to_login"
+            app:destination="@id/fragment_login"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_registro_to_sign_up"
+            app:destination="@id/fragment_registrarse"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.example.appgimnasio.Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_inicio"
+            app:destination="@id/inicio"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/fragment_login"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_registrarse"
+        android:name="com.example.appgimnasio.Sign_up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_registrarse_to_inicio"
+            app:destination="@id/inicio"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/fragment_registrarse"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+
+    <!-- Fragmentos con button navigation -->
+
+    <fragment
+        android:id="@+id/inicio"
+        android:name="com.example.appgimnasio.inicio"
+        tools:layout="@layout/fragment_inicio" />
+
+    <fragment
+        android:id="@+id/calendario"
+        android:name="com.example.appgimnasio.Calendario"
+        tools:layout="@layout/fragment_celendario" />
+
+    <fragment
+        android:id="@+id/Progreso"
+        android:name="com.example.appgimnasio.Progreso"
+        tools:layout="@layout/fragment_progreso" />
+
+    <fragment
+        android:id="@+id/Perfil"
+        android:name="com.example.appgimnasio.Perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+</navigation>

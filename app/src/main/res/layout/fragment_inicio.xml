@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".inicio">
+    tools:context=".inicio"
+    android:id="@+id/fragment_inicio">
 
     <!-- Con este constraint agrupamos todos los elementos anclandolos entre ellos -->
     <androidx.constraintlayout.widget.ConstraintLayout

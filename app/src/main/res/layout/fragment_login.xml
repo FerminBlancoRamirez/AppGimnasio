@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login"
-    android:background="@color/black">
+    android:background="@color/black"
+    android:id="@+id/fragment_login">
     <!-- En esta fragment creamos la pantalla de inicio de sesion -->
 
     <!-- Añadimos logo de app -->
