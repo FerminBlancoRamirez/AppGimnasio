@@ -22,6 +22,7 @@
     <string name="Peso_ejemplo">80</string>
     <string name="Bienvenida">¡Bienvenido Usuario!</string>
     <string name="EntrenamientoSemanal">Mis entrenamientos semanales</string>
+    <string name="EntrenamientoDiario">Mi entrenamiento de hoy</string>
     <string name="RegistroDeBloque">Registra tu bloque de entrenamiento</string>
 
 
@@ -48,5 +49,9 @@
     <string name="DiaDeEspalda">Espalda</string>
     <string name="DiaDeFullBody">FullBody</string>
     <string name="DiaDeDescanso">Dia de descanso</string>
+
+
+    <!--Descripciones -->
+    <string name="logoApp">Logo de la app</string>
 
 </resources>

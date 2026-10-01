@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Estilos para cada dia del mes del calendario-->
+    <style name="DayCalendarTextAppearance" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!--Estilos para el dia de la semana del calendario-->
+    <style name="WeekCalendarTextAppearance" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundColor">@color/gris_claro</item>
+    </style>
+
+    <style name="CalendarTheme" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:textColor">@color/gris_claro</item>
+        <item name="android:textSize">80sp</item>
+    </style>
+    
+
+</resources>
