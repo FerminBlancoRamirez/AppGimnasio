@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 public class SplashScreen extends Fragment {
 
@@ -28,13 +29,11 @@ public class SplashScreen extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            if (isAdded() && getActivity() instanceof MainActivity) {
-                // Llamamos a MainActivity pasándole las animaciones de Fade
-                ((MainActivity) getActivity()).loadFragment(
-                        new Registro(),
-                        R.anim.fade_in,
-                        R.anim.fade_out
-                );
+            // Verificamos que el fragmento siga adjunto a la pantalla para evitar crashes
+            if (isAdded()) {
+                NavHostFragment.findNavController(SplashScreen.this)
+                        .navigate(R.id.action_splash_to_registro);
+                // NOTA: Asegúrate de que R.id.action_splash_to_registro existe en tu nav_graph.xml
             }
         }, 3000);
     }

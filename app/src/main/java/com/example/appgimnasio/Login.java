@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +15,9 @@ import com.google.android.material.button.MaterialButton;
 
 public class Login extends Fragment {
 
-    public Login(){}
+    public Login() {
+        // Constructor vacío requerido
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -23,22 +26,14 @@ public class Login extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         MaterialButton iniciarSesion = view.findViewById(R.id.mBIniciarSesion);
 
-        iniciarSesion.setOnClickListener(v -> {
-            if (getActivity() instanceof MainActivity) {
-                // Pasamos el nuevo fragmento junto con las 4 animaciones
-                ((MainActivity) getActivity()).loadFragment(
-                        new inicio(),
-                        R.anim.slide_in_right,
-                        R.anim.slide_out_left,
-                        R.anim.slide_in_left,
-                        R.anim.slide_out_right
-                );
-            }
-        });
+        iniciarSesion.setOnClickListener(v ->
+                NavHostFragment.findNavController(Login.this)
+                        .navigate(R.id.action_login_to_inicio)
+        );
     }
 }
